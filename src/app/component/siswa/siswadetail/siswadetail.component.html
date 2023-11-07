@@ -1,0 +1,50 @@
+<div class="container my-5">
+    <h1 class="mb-3">{{ isEdit ? 'Edit Siswa' : 'Add Siswa' }}</h1>
+    <button type="button" class="btn btn-danger mb-2" routerLink="/siswalist/">Back</button>
+    <div class="row">
+        <div class="col-12">
+            <form #ngForm="ngForm" (ngSubmit)="saveSiswa()">
+
+                <input type="hidden" [(ngModel)]="model.id" name="id">
+
+                <div class="mb-3">
+                    <label for="nis" class="form-label">NIS</label>
+                    <input type="text" class="form-control" id="nis" name="nis" 
+                    [(ngModel)]="model.nis" placeholder="000000001">
+                </div>
+
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" 
+                    [(ngModel)]="model.name" placeholder="Jonh Doe">
+                </div>
+                <div class="mb-3">
+                    <label for="gender" class="form-label">Gender</label>
+                    <input type="text" class="form-control" id="gender" name="gender"
+                    [(ngModel)]="model.gender" placeholder="Male, Female">
+                </div>
+                <div class="mb-3">
+                    <label for="religion" class="form-label">Religion</label>
+                    <input type="text" class="form-control" id="religion" name="religion"
+                    [(ngModel)]="model.religion" placeholder="Islam, budha, ect">
+                </div>
+                <div class="mb-3">
+                    <label for="study" class="form-label">Study</label>
+                    <input type="text" class="form-control" id="study" name="study" 
+                    [(ngModel)]="model.study" placeholder="Math">
+                </div>
+                <div class="mb-3">
+                    <label for="class" class="form-label">Class</label>
+                    <input type="text" class="form-control" id="class" name="class" 
+                    [(ngModel)]="model.class" placeholder="Math 2">
+                </div>
+                <div class="mb-3">
+                    <label for="Address" class="form-label">Address</label>
+                    <textarea class="form-control" id="Address" rows="3" name="address"
+                    [(ngModel)]="model.address"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </form>
+        </div>
+    </div>
+</div>

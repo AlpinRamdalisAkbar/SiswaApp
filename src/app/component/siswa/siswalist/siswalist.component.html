@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <h1 class="mb-3">Siswa</h1>
+
+    <div class="d-flex justify-content-between">
+        <div>
+            <button type="button" class="btn btn-primary width" routerLink="/siswalist/siswadetail">Add</button>
+        </div>
+    </div>
+
+    <table class="table" *ngIf="siswas && siswas.length > 0">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NIS</th>
+                <th scope="col">Name</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Religion</th>
+                <th scope="col">Study</th>
+                <th scope="col">Action</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let siswa of siswas">
+                <td>{{ siswa.rowNumber }}</td>
+                <td>{{ siswa.nis }}</td>
+                <td>{{ siswa.name }}</td>
+                <td>{{ siswa.gender }}</td>
+                <td>{{ siswa.religion }}</td>
+                <td>{{ siswa.study }}</td>
+                <td>
+                    <button type="button" class="btn btn-warning mb-3" (click)="editBtn(siswa.id)">Edit</button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="deleteBtn(siswa.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <p *ngIf="!siswas || siswas.length <= 0">
+        Data not Found!
+    </p>
+</div>
